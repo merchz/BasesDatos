@@ -7,6 +7,6 @@ quit;
 -- ver bases de datos
 show database;
 
-use mysl;
+use mysql;
 -- para utilizar base de datos
 
