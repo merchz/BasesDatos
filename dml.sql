@@ -5,7 +5,7 @@ mysql -u root -p
 quit;
 
 -- ver bases de datos
-show database;
+show databases;
 
 use mysql;
 -- para utilizar base de datos
