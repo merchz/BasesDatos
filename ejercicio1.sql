@@ -12,3 +12,4 @@ insert into productos values('423', 'movil','movil con 8gb de almacenamiento','4
 show tables;
 -- eliminar la bd productos
 DROP DATABASE productos;
+
