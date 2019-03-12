@@ -19,6 +19,7 @@ select max(Altura) from jugadores;
 select nombre, altura from jugadores order by altura desc;
 -- Mostrar todas las columnas de la tabla jugadores donde en la columna 'nombre' lleven la palabra john
 select * from jugadores where nombre like '%John%';
+
 -- Mostrar la columna División sin registros repetidos de la tabla equipos
 select distinct Division from equipos;
 -- Seleccionamos las columnas 'Posición''nombre' de la tabla jugadores donde la columna 'nombre' sea Pau Gasol
@@ -35,7 +36,8 @@ select count(*)from partidos where equipo_local='Raptors' and temporada='99/00';
 select min(puntos_visitante)from partidos;
 -- Mostar equipo local y equipo visitante en la que los puntos visitantes sean '158'
 select equipo_local, equipo_visitante from partidos where puntos_visitante='158';
--- contar todas las filas de la tabla partidos donde los lakers en la temporada '99/00' obtuvieron menos puntos de local que de visitante
+-- contar todas las filas de la tabla partidos donde los lakers en la temporada '99/00' 
+-- obtuvieron menos puntos de local que de visitante
 select count(*)from partidos where equipo_local='lakers' and temporada='99/00' and puntos_local<puntos_visitante;
 -- Mostrar columnas equipo local, equipo visitante, puntos local, puntos visitante de la tabla partidos donde equipo_local se 'lakers' temporada'99/00' y los puntos_local sea menor que puntos_v
 select equipo_local, equipo_visitante, puntos_local, puntos_visitante from partidos where equipo_local='lakers' and temporada='99/00' and puntos_local<puntos_visitante;
@@ -43,7 +45,7 @@ select equipo_local, equipo_visitante, puntos_local, puntos_visitante from parti
 select equipo_local, equipo_visitante, puntos_local, puntos_visitante from partidos where equipo_local='Lakers' and temporada='99/00' and puntos_local<puntos_visitante or equipo_visitante='Lakers'and temporada='99/00'and puntos_local<puntos_visitante order by equipo_local asc;
 -- fecha de consulta 13/12/2018
 -- realizar una suma
-select 3+5;
+select 3+5;jugadores
 -- media de la columna peso de tabla jugadores
 SELECT 
     AVG(peso)
@@ -83,7 +85,7 @@ select conferencia, count(*) from equipos group by conferencia;
 select conferencia, count(*) from equipos where nombre like'c%' group by conferencia;
 --
 select procedencia, avg(peso) from jugadores where procedencia='Spain';
---IN 'Pertenencia a conjuntos' por ejemplo en este caso jugadores que sean de francia o españa
+-- IN 'Pertenencia a conjuntos' por ejemplo en este caso jugadores que sean de francia o españa
 select procedencia, avg(peso) from jugadores where procedencia IN('Spain','France') group by Procedencia;
 --
 SELECT 
@@ -100,7 +102,7 @@ select count(jugadores.nombre) from jugadores, equipos where equipos.Conferencia
 -- con una subconsulta la anterior
 select count(nombre) from jugadores where nombre_equipo IN(select nombre from equipos where conferencia='west');
 -- 19/12
--- nombre y ciudad de los equipos en los que juegan los español
+-- nombre y ciudad de los equipos en los que juegan los españoles
 select nombre, ciudad from equipos where exists (select * from jugadores where jugadores.Procedencia='Spain' and jugadores.Nombre_equipo=equipos.nombre); 
 -- jugadores que pesan más que el jugador español más pesado
 select nombre from jugadores where peso>all(select peso from jugadores where procedencia='Spain');
