@@ -36,9 +36,6 @@ if n1<n2 then
 		set menor = n1;
 	elseif n2<n3 then
 		set menor =n2;
-	end if;
-    elseif n2<n3 then	
-		set menor =n2;
 	else
 		set menor= n3; 
 	end if;
