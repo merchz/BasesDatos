@@ -1,2 +1,0 @@
--- crear base de datos restricciones
--- clientes dni 9 nombre 50 direcciones 60
